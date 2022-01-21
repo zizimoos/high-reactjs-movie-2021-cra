@@ -43,24 +43,24 @@ const Detail = () => {
           <p>{movie.imdb_code}</p>
           <h2>Genres</h2>
           <p>
-            {movie.genres.map((m) => (
-              <li>{m}</li>
+            {movie.genres.map((m, index) => (
+              <li key={index}>{m}</li>
             ))}
           </p>
           <h2>Description</h2>
           <p>{movie.description_full}</p>
           <h2>Torrents</h2>
-          <p>
-            {movie.torrents.map((seed) => {
+          <div>
+            {movie.torrents.map((seed, index) => {
               return (
-                <div>
-                  <p>{seed.quality}</p>
-                  <p>{seed.url}</p>
-                  <p>{seed.hash}</p>
+                <div key={index}>
+                  <h5>{seed.quality}</h5>
+                  <h5>{seed.url}</h5>
+                  <h5>{seed.hash}</h5>
                 </div>
               );
             })}
-          </p>
+          </div>
         </div>
       )}
     </div>
