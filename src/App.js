@@ -7,6 +7,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+      </Routes>
+      <Routes>
         <Route path="/movie/:id" element={<Detail></Detail>} />
       </Routes>
     </BrowserRouter>
